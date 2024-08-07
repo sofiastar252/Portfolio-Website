@@ -1,0 +1,734 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    min-height: 60px;
+    overflow: hidden;
+    cursor: url("wand.png"), auto;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    transition: all .5s ease;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+    cursor: url("wand.png"), auto;
+}
+#navbar #printButton {
+    display: inline-block;
+    text-align: center;
+    transition: box-shadow 0.2s;
+    background: transparent;
+    padding: 1px;
+}
+
+#navbar #printButton img {
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+#navbar #printButton:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+}
+@media print {
+    body {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact; 
+    }
+  
+    @page {
+      size: A4 landscape;
+      margin: 0;
+      print-color-adjust: exact; 
+      -webkit-print-color-adjust: exact;
+    }
+  }
+  
+/* Welcome Section */
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    background: url('galaxy.png') no-repeat center center/cover;
+    overflow: hidden;
+    cursor: url("wand.png"), auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+}
+@media (max-width: 768px) {
+    #welcome {
+        background-attachment: scroll;
+    }
+}
+#welcome p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: rgb(255, 255, 255);
+}
+
+/* Dark-mode */
+body.dark-mode #welcome {
+    background-color: #938f8f;
+    color: #62029a;
+}
+
+body.dark-mode #home {
+    background-color: #7b7a7a;
+    color: #62029a;
+}
+
+body.dark-mode #about {
+    background-color: #5b616b;
+    color: #62029a;
+}
+
+body.dark-mode #portfolio {
+    background-color: #506276;
+    color: #62029a;
+}
+
+body.dark-mode #services {
+    background-color: #333;
+    color: #62029a;
+}
+
+body.dark-mode #contact {
+    background-color: #333;
+    color: #62029a;
+}
+
+.headings {
+    font-family: century;
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.btn {
+    padding: 10px 35px;
+    background-color: white;
+    border: 1px solid white;
+    color: white;
+    outline: none;
+    transition: .6s ease;
+    margin-bottom: 50px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+    font-weight: bold;
+    cursor: url("wand.png"), auto;
+}
+
+/* Home Section styles */
+#home {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 100px 20px 50px;
+    cursor: url("wand.png"), auto;
+    background-color: rgba(31, 144, 243, 0.9);
+    color: white;
+}
+
+#pic {
+    display: flex;
+}
+
+#pic img {
+    width: 575px;
+    height: 400px;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+}
+
+.headings {
+    font-size: 3rem;
+}
+
+#intro p {
+    font-size: 1.6rem; 
+    text-align: left;
+}
+
+
+/* Portfolio Resumé Button */
+.portfolio-button {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.portfolio-button .btn {
+    padding: 10px 35px;
+    background-color: #3700ff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-button .btn:hover {
+    background-color: #1e00b3;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    #pic img.safia-green-image {
+        position: relative;
+        right: 0;
+        margin-top: 20px;
+        max-width: 50%; 
+        width: auto; 
+        height: auto; 
+    }
+}
+
+/* Portfolio Section */
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(80, 98, 212, 0.9);
+    color: rgb(255, 255, 255);
+    padding: 60px 20px 50px;
+
+    cursor: url("wand.png"), auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.gallery a {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 40%;
+    height: auto;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+#portfolio .headings {
+    margin-bottom: 10px;
+}
+
+#portfolio p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Portfolio Section - Responsive Styles */
+@media screen and (max-width: 800px) {
+    #portfolio .headings {
+        text-align: center;
+        margin: 0;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .gallery a {
+        justify-content: center; 
+    }
+}
+
+/* About Me Section */
+#about {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(20, 36, 145, 0.9);
+    color: rgb(255, 255, 255);
+    align-items: center;
+    padding: 260px 20px 50px;
+
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    cursor: url("wand.png"), auto;
+    background-color: rgba(3, 84, 199, 0.9);
+}
+
+#about font {
+    font-size: 3rem;
+    margin-top: -180px;
+    font-weight: bold;
+}
+
+#about ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin-top: -20px;
+}
+
+#about li {
+    background-color: #54c9f4;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+
+#about li:hover {
+    background-color: #73d190;
+    cursor: url("wand.png"), auto;
+}
+#hobbies {
+    font-size: 1.6rem; 
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    #about ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #about li {
+        width: 80%;
+    }
+}
+
+/* Services Section */
+#services {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px 50px;
+    align-items: center;
+    cursor: url("wand.png"), auto;
+    background-color: rgba(60, 69, 183, 0.9);
+}
+
+#services .headings {
+    font-family: century;
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+#servicesTitle {
+    color: white; /* Change the color of the title to white */
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 450px;
+    border: 1px solid black;
+    margin: 10px;
+    align-items: center; 
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    background: linear-gradient(to top, rgb(45, 157, 255) 50%, white 50%);
+    background-size: 100% 200%;
+    transition: all .8s;
+}
+
+.box:hover {
+    background-position: left bottom;
+    color: white;
+    border: none;
+    box-shadow: 0 0 20px rgb(45, 76, 255);
+}
+
+.box img {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    padding: 10px;
+}
+
+.box p {
+    margin: 10px 0;
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgba(32, 13, 139, 0.9);
+    color: rgb(255, 255, 255);
+    padding: 70px 20px 50px;
+    background: url('tree.png') no-repeat center center/cover;
+}
+
+#contact .headings {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+/* Styling for the contact form text */
+#contact form,
+#contact label,
+#contact input,
+#contact textarea {
+    color: rgb(0, 0, 0); 
+}
+
+/* Styling for the "Reach out for all inquiries" text */
+/* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: rgba(32, 13, 139, 0.9);
+    color: rgb(255, 255, 255);
+    padding: 70px 20px 50px;
+    background: url('tree.png') no-repeat center center/cover;
+}
+
+#contact .headings {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+/* Styling for the contact form text */
+#contact p.subtitle-white {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Styling for the form and form elements */
+#contact form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000; /* Set text color for form labels */
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #000; /* Set text color for form inputs */
+}
+
+#contact form input[type="submit"],
+#contact form input[type="reset"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #ffffff; /* Set text color to white */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#contact form input[type="reset"] {
+    background-color: #FF0000;
+}
+
+#contact form input[type="submit"]:hover,
+#contact form input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+/* Shooting Star Animation for Ending on Page Transition */
+@keyframes animateShootingStarEnd {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.shooting-star.next-page {
+    animation: animateShootingStarEnd 3s linear forwards;
+}
+
+/* Shooting Star Animation */
+@keyframes animateShootingStar {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1500px);
+        opacity: 0;
+    }
+}
+
+/* Shooting Star Animation */
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1500px);
+        opacity: 0;
+    }
+}
+
+/* Shooting Star Animation - Individual Stars */
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+    animation: animate 3s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+span:nth-child(1) {
+    top: 0;
+    right: 5%;
+    left: initial;
+    animation-delay: 0;
+    animation-duration: 1s;
+}
+
+span:nth-child(2) {
+    top: 0;
+    right: 15%;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+span:nth-child(3) {
+    top: 80px;
+    right: 10%;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+span:nth-child(4) {
+    top: 0;
+    right: 20%;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+
+span:nth-child(5) {
+    top: 0;
+    right: 30%;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(6) {
+    top: 120px;
+    right: 5%;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 1.8s;
+}
+
+span:nth-child(7) {
+    top: 0;
+    right: 40%;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 2.8s;
+}
+
+span:nth-child(8) {
+    top: 0;
+    right: 50%;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.3s;
+}
+
+span:nth-child(9) {
+    top: 160px;
+    right: 15%;
+    left: initial;
+    animation-delay: 1.6s;
+    animation-duration: 2.3s;
+}
+
+span:nth-child(10) {
+    top: 0;
+    right: 60%;
+    left: initial;
+    animation-delay: 1.8s;
+    animation-duration: 2.3s;
+}
+
+span:nth-child(11) {
+    top: 0;
+    right: 70%;
+    left: initial;
+    animation-delay: 2s;
+    animation-duration: 1.7s;
+}
+
+span:nth-child(12) {
+    top: 200px;
+    right: 25%;
+    left: initial;
+    animation-delay: 2.2s;
+    animation-duration: 2s;
+}
+
+span:nth-child(13) {
+    top: 0;
+    right: 80%;
+    left: initial;
+    animation-delay: 2.4s;
+    animation-duration: 1.2s;
+}
+
+span:nth-child(14) {
+    top: 0;
+    right: 90%;
+    left: initial;
+    animation-delay: 2.6s;
+    animation-duration: 1.6s;
+}
+
+span:nth-child(15) {
+    top: 240px;
+    right: 35%;
+    left: initial;
+    animation-delay: 2.8s;
+    animation-duration: 1.5s;
+}
